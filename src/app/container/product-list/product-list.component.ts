@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Products } from '../Models/Products';
 
 @Component({
   selector: 'product-list',
@@ -6,6 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
+
   name="Naeem Sardar";
   addToCart:number = 0;
  
@@ -15,7 +17,6 @@ export class ProductListComponent {
 
   onNameChange(event: any){
 
-    
     this.name = event.target.value;
     //console.log(event.target.value);
   }
@@ -32,6 +33,7 @@ export class ProductListComponent {
     // }
   }
 
+  selectedProduct:Products
   products =[
     {
       id:1,

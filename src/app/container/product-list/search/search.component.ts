@@ -9,9 +9,9 @@ import { Component,EventEmitter, Output } from '@angular/core';
 export class SearchComponent {
   searchText: string = '';
 
-  updateSearchText(event: any){
-      this.searchText = event.target.value;
-  }
+  // updateSearchText(event: any){
+  //     this.searchText = event.target.value;
+  // }
  
   @Output()
   SearchTextChanged:EventEmitter<string> = new EventEmitter<string>();
@@ -20,4 +20,13 @@ export class SearchComponent {
   {
     this.SearchTextChanged.emit(this.searchText);
   }
+
+   updateSearchText(inputEl:HTMLInputElement)
+   {
+      // console.log(inputEl.value);  
+    
+      this.searchText = inputEl.value;
+    this.SearchTextChanged.emit(this.searchText);
+      
+    }
 }

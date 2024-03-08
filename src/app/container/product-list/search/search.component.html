@@ -1,7 +1,15 @@
 <div class="ekart--search--product">
-    <input class="ekart-search-product-input" [(ngModel)]="searchText" (input)="onSearchTextChanged()">
-    <button [ngClass]="{'btn':true,'btn-search':searchText,'btn-search-disable':!searchText}" [disabled]="!searchText">Search</button>
+    <!--NS: using Template reference variable like this #searchInput  -->
+    <input class="ekart-search-product-input" #searchInput>
+    <!-- NS:It was working Custom Event binding && two way data binding using ngModel  -->
+    <!-- <input class="ekart-search-product-input" [(ngModel)]="searchText" (input)="onSearchTextChanged()"> -->
+    <button class="btn btn-search" (click)="updateSearchText(searchInput)">Search</button>
+          
+    <!--NS: Apply run time style using ngClass like this  -->
+    <!-- <button [ngClass]="{'btn':true,'btn-search':searchText,'btn-search-disable':!searchText}" [disabled]="!searchText">Search</button> -->
+   
+ <div class="ekart-search-result-for"><p><strong>Search result for:</strong> {{ searchText }}</p></div>
 </div>
-<!-- <div class="ekart-search-result-for"><p><strong>Search result for:</strong> {{ searchText }}</p></div> -->
+
 
 

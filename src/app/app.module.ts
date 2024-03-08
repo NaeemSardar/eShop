@@ -24,6 +24,7 @@ import { TopHeaderComponent } from './container/top-header/top-header.component'
 import { ProductComponent } from './container/product-list/product/product.component';
 import { FilterComponent } from './container/product-list/filter/filter.component';
 import { ContainerComponent } from './container/container.component';
+import { ProductDetailsComponent } from './container/product-details/product-details.component';
 
 
 
@@ -71,7 +72,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     SearchComponent,
     ProductComponent,
     FilterComponent,
-    ContainerComponent
+    ContainerComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

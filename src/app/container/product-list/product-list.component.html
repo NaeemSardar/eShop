@@ -26,7 +26,7 @@
     <div *ngFor="let item of stringArray">
         <p [ngStyle]="{fontweight:'bold',color:item=='Pen'?'red':'gray'}">Array of item is :{{item}}</p>
     </div> -->
-   <div *ngFor="let prod of products">
+   <div *ngFor="let prod of products" (click)="selectedProduct = prod ">
        <!-- This piece of code for radio button onRadioButtonChanged
         *ngIf="SelectedFilterChanged==='all' || prod.is_in_inventry.toString() === SelectedFilterChanged || prod.is_in_inventry.toString() === SelectedFilterChanged" -->
        <app-product [product]="prod"  *ngIf="searchText ==='' || prod.name.includes(searchText)"></app-product>
